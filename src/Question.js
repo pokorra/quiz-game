@@ -4,22 +4,24 @@ const SingleQuest = (props) => {
     const [odp, setOdp] = useState('');
 
     const goodAns = props.item.answer;
+
+    const setTabCounter = props.setTab;
+    let letTab = props.letTab;
     
     const submit = (e) => {
         e.preventDefault();
         if (goodAns === odp) {
-            console.log('dobra odpowiedź');
             props.updateCounter(5);
             setOdp(''); //czemu to działa? to niezgodne ze sztuką, ale skuteczne?
-            console.log(odp);  
+            setTabCounter(prevState=>prevState+1);  
         } else {
             alert('zła odpowiedź');
-            console.log(goodAns);
+            setTabCounter(prevState=>prevState+1);
             setOdp('');
         }
     }
     return (
-        <form onSubmit={submit}>
+        <form onSubmit={submit} className={`singleQuest ${(props.item === letTab) ? "" : "hidden"}`} >
             <label>
                 {props.item.question}
                 <input
@@ -43,24 +45,35 @@ const Counter = (props) => {
 }
 
 const AllQuests = (props) => {
+   
     const [counter, setCounter] = useState(0);
+
+    const [tableCounter, setTableCounter] = useState(0);
+    let firstTableEl = props.items[tableCounter];
+    //let, bo ten nieszczęsny counter się zmienia
 
     const updateCounter = (number) => {
         setCounter(prevState => prevState + number);
     }
+   
 
     return (
     <>    
-        <div className='component'>
+        <div className='component questions'>
             {props.items.map(item => (
-                <SingleQuest key={item.id} item={item} updateCounter={updateCounter}/>
+                <SingleQuest key={item.id} 
+                    item={item} 
+                    updateCounter={updateCounter}
+                    letTab={firstTableEl}
+                    setTab={setTableCounter}
+                    />
             ))}
         </div>
+
         <Counter counter={counter} />
     </>
     )
 }
-
 
 
 const Question = (props) => {

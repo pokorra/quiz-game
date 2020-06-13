@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 
+//pozamieniać na buttony
+
 const Choice = (props) => {
     const [category, setCategory] = useState('');
 

@@ -1,3 +1,26 @@
+.hidden {
+  display: none;
+}
+
+.singleQuest {
+  height: 80px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px dotted green;
+  background-color: cadetblue;
+  /* display: flex;
+  flex-direction: column; */
+  animation: anime 2s ease-in forwards;
+}
+@keyframes anime {
+  0% {margin-left: 100%; background-color: black; color: black}
+  50% {margin-left: 0%; background-color: cadetblue; color: cadetblue}
+  55% {color: black}
+}
+
+.questions {
+  display: flex;
+}
 .component {
     padding: 10px;
     margin: 20px;

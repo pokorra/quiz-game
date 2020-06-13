@@ -14,6 +14,21 @@ const HisDarkMaterials = [
     question: "Stanislaus Grumman to wujek czy ojciec Willa Parry'ego?",
     answer: "ojciec"
   },
+  {
+    id: 4,
+    question: "Dajmon pani Coulter to złota...?",
+    answer: "małpa"
+  },
+  {
+    id: 5,
+    question: "Panserbjorne to niedźwiedzie posiadające...",
+    answer: "pancerze"
+  },
+  {
+    id: 6,
+    question: "Czy ojciec Coram i Serafina Pekkala mieli dzieci?",
+    answer: "tak"
+  },
  ];
 
 const HarryPotter = [
