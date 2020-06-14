@@ -1,22 +1,23 @@
 import React, {useState} from 'react';
-import Timer from './Timer';
+
 import Question from './Question';
-import Choice from './Choice';
+// import Choice from './Choice'; - niepotrzebne, jeśli będą buttony
 import data from './questionData';
 import './Game.css';
+import ButtonsChoice from './ButtonsChoice';
 
-const Game = (props) => {
-    const [category, setCategory] = useState('HisDarkMaterials');
-
+const Game = () => {
+    const [category, setCategory] = useState('Waiter');
     const updateCategory = (name) => {
         setCategory(name);
     }
 
     return (
         <>
-            <Choice updateCategory={updateCategory}/>
+            {/* <Choice updateCategory={updateCategory}/> */}
+            <ButtonsChoice updateCategory={updateCategory}/>
             <Question quest={data[category]} className='component'/>
-            <Timer className='component'/>
+            
         </>
     )
 }

@@ -7,14 +7,14 @@
   padding: 20px;
   margin: 10px;
   border: 1px dotted green;
-  background-color: cadetblue;
+  background-color: plum;
   /* display: flex;
   flex-direction: column; */
   animation: anime 2s ease-in forwards;
 }
 @keyframes anime {
   0% {margin-left: 100%; background-color: black; color: black}
-  50% {margin-left: 0%; background-color: cadetblue; color: cadetblue}
+  50% {margin-left: 0%; background-color: plum; color: plum}
   55% {color: black}
 }
 

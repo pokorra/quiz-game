@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import Counter from './Counter';
+import Timer from './Timer';
 
 const SingleQuest = (props) => {
     const [odp, setOdp] = useState('');
@@ -7,6 +9,7 @@ const SingleQuest = (props) => {
 
     const setTabCounter = props.setTab;
     let letTab = props.letTab;
+    const toggle = props.toggle;
     
     const submit = (e) => {
         e.preventDefault();
@@ -19,6 +22,7 @@ const SingleQuest = (props) => {
             setTabCounter(prevState=>prevState+1);
             setOdp('');
         }
+        toggle();
     }
     return (
         <form onSubmit={submit} className={`singleQuest ${(props.item === letTab) ? "" : "hidden"}`} >
@@ -35,28 +39,28 @@ const SingleQuest = (props) => {
             
         </form>
     )
-}
-
-const Counter = (props) => {
-
-    return (
-    <h1 className='component'>wynik: {props.counter}</h1>
-    )
-}
+};
 
 const AllQuests = (props) => {
-   
-    const [counter, setCounter] = useState(0);
+   //zmienne związane z komponentem Counter:
+    const [pointCounter, setPointCounter] = useState(0);
+    const updateCounter = (number) => {
+        setPointCounter(prevState => prevState + number);
+    }
 
+    //zmienne zw. z SingleQuestem:
     const [tableCounter, setTableCounter] = useState(0);
     let firstTableEl = props.items[tableCounter];
     //let, bo ten nieszczęsny counter się zmienia
 
-    const updateCounter = (number) => {
-        setCounter(prevState => prevState + number);
-    }
+    //zmienne związane z Timerem:
+    const [counter, setCounter] = useState(30);
+    const [isActive, setActive] = useState(false);
+    const toggle = () => {
+        setActive(!isActive);
+    } 
+    
    
-
     return (
     <>    
         <div className='component questions'>
@@ -66,11 +70,19 @@ const AllQuests = (props) => {
                     updateCounter={updateCounter}
                     letTab={firstTableEl}
                     setTab={setTableCounter}
+                    toggle = {toggle}
+                    
                     />
             ))}
         </div>
 
-        <Counter counter={counter} />
+        <Counter counter={pointCounter} />
+        <Timer setCounter={setCounter}
+            counter={counter}
+            setActive={setActive}
+            isActive={isActive}
+            toggle = {toggle}
+            />
     </>
     )
 }

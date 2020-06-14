@@ -1,3 +1,9 @@
+const Waiter =[
+  {
+    question: "Wybierz kategorię i zaczynamy quiz!", 
+  }
+]
+
 const HisDarkMaterials = [
   {
     id: 1,
@@ -49,4 +55,4 @@ const HarryPotter = [
   }
 ]
 
-export default {HisDarkMaterials, HarryPotter};
+export default {Waiter, HisDarkMaterials, HarryPotter};
