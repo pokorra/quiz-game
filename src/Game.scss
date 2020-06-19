@@ -1,16 +1,19 @@
+@import 'scss-config/reset';
+@import 'scss-config/variables';
+
+@import 'scss-elements/hello.scss';
+
+@import 'scss-layout/button.scss';
+
 .game {
-  background-color: rgb(199, 198, 199);
+  background-color: $primary-bckgrnd;
 }
 
 .hidden {
   display: none;
 }
 
-.hello {
-  background-color: pink;
-  height: 150px;
-  width: 80vw;
-}
+
 .singleQuest {
   height: 80px;
   padding: 20px;

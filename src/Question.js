@@ -6,41 +6,54 @@ const SingleQuest = (props) => {
     const [odp, setOdp] = useState('');
 
     const goodAns = props.item.answer;
-
-    const setTabCounter = props.setTab;
+    const tableCounter = props.tableCounter;
+    const setTableCounter = props.setTableCounter;
     let letTab = props.letTab;
-
     const startCounting = props.startCounting;
+    const tableLength = props.tableLength;
+    const endOfGame = props.endOfGame;
+
 
     const submit = (e) => {
         e.preventDefault();
         if (goodAns === odp) {
             props.updateCounter(10);
             setOdp('');
-            setTabCounter(prevState=>prevState+1);  
+            setTableCounter(prevState=>prevState+1);
         } else {
             alert('zła odpowiedź');
             props.updateCounter(-3);
-            setTabCounter(prevState=>prevState+1);
             setOdp('');
+            setTableCounter(prevState=>prevState+1);
         }
-        startCounting();
+        
+        if (tableCounter +1 === tableLength) {
+
+            endOfGame();
+            alert('koniec gry!');
+            setTableCounter(0);
+            return;
+        } else {
+            startCounting();
+        }
+       
     }
 
     return (
-        
-            <form onSubmit={submit} className={`singleQuest ${(props.item === letTab) ? "" : "hidden"}`} >
-            <label>
-                {props.item.question}
-                <input
-                type='text'
-                name = {goodAns}
-                value={odp}
-                onChange = {e => setOdp(e.target.value)}
-                />
-                <button type='submit'> ok</button>
-            </label>
-            </form>   
+            <div className={`singleQuest ${(props.item === letTab) ? "" : "hidden"}`} >
+                <form onSubmit={submit} className="innerQuestion">
+                <label>
+                    {props.item.question}
+                    <input
+                    type='text'
+                    name = {goodAns}
+                    value={odp}
+                    onChange = {e => setOdp(e.target.value)}
+                    />
+                    <button type='submit'> ok</button>
+                </label>
+                </form> 
+            </div>  
        
             
     )
@@ -48,7 +61,9 @@ const SingleQuest = (props) => {
 
 const AllQuests = (props) => {
    //zmienne związane z komponentem Counter:
-    const [pointCounter, setPointCounter] = useState(0);
+    
+    const pointCounter = props.pointCounter;
+    const setPointCounter = props.setPointCounter;
     const updateCounter = (number) => {
         setPointCounter(prevState => prevState + number);
     }
@@ -56,63 +71,52 @@ const AllQuests = (props) => {
     //zmienne zw. z SingleQuestem:
     const [tableCounter, setTableCounter] = useState(0);
     let firstTableEl = props.items[tableCounter];
+    const tableLength = props.items.length;
+
+    const endOfGame = props.endOfGame;
+    const isFinished = props.isFinished;
+
     //let, bo ten nieszczęsny counter się zmienia
     
-    // const tableLenght z długością tablicy, żeby, gdy nr pytania będzie większy niż table.length, 
 
     //zmienne związane z Timerem:
-    // const [counter, setCounter] = useState(15);
-    // const [isActive, setActive] = useState(false);
     const timeCounter = props.timeCounter;
     const setTimeCounter = props.setTimeCounter;
     const isTimerActive = props.isTimerActive;
     const setTimerActive = props.setTimerActive;
     const startCounting = props.startCounting;
-     //setCounter ustawia counter na 15, setActive ustawia counter na 
-    //aktywny lub nie, startCounting ustawia setActive na true
 
-    //do skasowania jeśli dane przekazane z propsa działają
-    // const toggle = () => {
-    //     setActive(!isActive);
-    // } 
-    // const startCounting = () => {
-    //     setActive(true);
-    // }
-    
-   
     return (
-    <div className={props.isQuestion ? 'component' : 'hidden'}>    
+    <div className={`${props.isQuestion ? 'component' : 'hidden'} 
+                        ${isFinished ? "hidden" : ""}`}>    
         <div className='component questions'>
             {props.items.map(item => (
                 <SingleQuest key={item.id} 
                     item={item} 
                     updateCounter={updateCounter}
                     letTab={firstTableEl}
-                    setTab={setTableCounter}
-                    // toggle={toggle}   
-                    // startCounting={startCounting} 
+                    setTableCounter={setTableCounter}
+                    tableCounter={tableCounter}
+                   
 
                     timeCounter={timeCounter}
                     setTimeCounter={setTimeCounter}
                     setTimerActive={setTimerActive}
                     startCounting={startCounting}
+                    tableLength = {tableLength}
+                    endOfGame={endOfGame}
                     />
             ))}
         </div>
 
         <Counter counter={pointCounter} />
         <Timer 
-            // setCounter={setCounter}
-            // counter={counter}
-            // setActive={setActive}
-            // isActive={isActive}
-            // toggle = {toggle}
-
             timeCounter={timeCounter}
             setTimeCounter={setTimeCounter}
             isTimerActive={isTimerActive}
-            setTimerActive={setTimerActive}
-            startCounting={startCounting}
+            isFinished={isFinished}
+            // setTimerActive={setTimerActive}
+            // startCounting={startCounting}
             />
     </div>
     )
@@ -120,14 +124,20 @@ const AllQuests = (props) => {
 
 
 const Question = (props) => {
+
+    const pointCounter = props.pointCounter;
+    const setPointCounter = props.setPointCounter;
+
     const isQuestion = props.isQuestion;
     const setTimeCounter = props.setTimeCounter;
     const isTimerActive = props.isTimerActive;
     const setTimerActive = props.setTimerActive;
     const startCounting = props.startCounting;
     const timeCounter = props.timeCounter;
+    const setFinished = props.setFinished;
+    const isFinished = props.isFinished;
+    const endOfGame = props.endOfGame;
 
-    
     return (
         <>
             <AllQuests 
@@ -138,6 +148,11 @@ const Question = (props) => {
             isTimerActive={isTimerActive}
             setTimerActive={setTimerActive}
             startCounting={startCounting}
+            pointCounter={pointCounter} 
+            setPointCounter={setPointCounter}
+            isFinished={isFinished}
+            setFinished={setFinished}
+            endOfGame={endOfGame}
             />
 
         </>

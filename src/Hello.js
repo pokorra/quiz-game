@@ -11,6 +11,5 @@ const Hello = (props) => {
 }
 
 // po kliknięciu na buttChoice zwija się do góry
-//{className={`singleQuest ${(props.item === letTab) ? "" : "hidden"}`}
 
 export default Hello;
