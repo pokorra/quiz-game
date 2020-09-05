@@ -1,0 +1,25 @@
+button {
+    margin: $standard;
+    padding: $standard/2;
+    border-radius: $standard/2;
+    color: black;
+    background-color: $pinkier;
+    border: none;
+    font-family: $primaryfont;
+    font-size: $standard*1.5;
+    // font-weight: 400;
+    cursor: pointer;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+
+    &:hover {
+        // opacity: .3;
+        background-color: $green;
+        font-size: $standard*2;
+        font-weight: bold;
+        border: 2px solid $pinkier;
+    }
+
+}

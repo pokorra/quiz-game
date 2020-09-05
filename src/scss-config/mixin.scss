@@ -1,0 +1,5 @@
+@mixin questionStyle {
+    padding: $standard*2;
+    border-radius: $standard;
+    background-color: $green;
+}

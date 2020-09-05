@@ -1,0 +1,22 @@
+.finished {
+    height: 100%;
+    width: 100%;
+    background-color: $pink;
+    animation: finish 2s ease-in forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $standard;
+    h2, h1 {
+        margin: $standard;
+    }
+    p{
+        margin: $standard*3;
+    }
+
+}
+
+@keyframes finish {
+    0% { margin-top: -100%;}
+    50% {margin-top: 0%;}
+}

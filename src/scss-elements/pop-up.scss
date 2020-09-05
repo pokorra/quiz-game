@@ -1,0 +1,23 @@
+.pop-up {
+    position: absolute;
+    width: 70vw;
+    height: 80vh;
+    background-color: black;
+    opacity: .9;
+    top: $standard*3;
+    border-radius: $standard*2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1, p {
+        color: white;
+    }
+    button {
+        margin: $standard;
+        background-color: black;
+        border: 2px solid white;
+        color: white;
+    }
+}

@@ -1,0 +1,17 @@
+// .buttons-choice {
+//     // border:s 1px solid green;
+//     // height: 50%;
+// }
+
+.choice {
+    background-color: $pink;
+    border-radius: $standard;
+    color: $purple;
+    padding: $standard;
+    height: 15vh;
+    // border: 1px solid blue;
+}
+
+.hidden-button {
+    display: none;
+}

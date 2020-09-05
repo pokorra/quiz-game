@@ -1,0 +1,42 @@
+html {
+    font-size: 3vw;
+}
+
+body {
+    font-family: $primaryfont;
+    color: $purple;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+p, label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+// 
+
+input {  
+    margin-left: $standard;
+	border:0;
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background: $background;
+	line-height: $standard*2;
+}
+
+
+
+.hidden {
+    display: none;
+}

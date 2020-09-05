@@ -12,6 +12,8 @@ const SingleQuest = (props) => {
     const startCounting = props.startCounting;
     const tableLength = props.tableLength;
     const endOfGame = props.endOfGame;
+    const setTimeCounter = props.setTimeCounter;
+    const setTimerActive = props.setTimerActive;
 
 
     const submit = (e) => {
@@ -21,16 +23,23 @@ const SingleQuest = (props) => {
             setOdp('');
             setTableCounter(prevState=>prevState+1);
         } else {
-            alert('zła odpowiedź');
+            // setTimeCounter(0);
+            console.log(tableCounter);
+            setTimerActive(false);
+            setVisible(true);
             props.updateCounter(-3);
             setOdp('');
-            setTableCounter(prevState=>prevState+1);
+            if (tableCounter +1 === tableLength) {
+                endOfGame();
+                setTableCounter(0);
+                return;
+            };
+            return;
+            // setTableCounter(prevState=>prevState+1);
         }
         
         if (tableCounter +1 === tableLength) {
-
             endOfGame();
-            alert('koniec gry!');
             setTableCounter(0);
             return;
         } else {
@@ -38,10 +47,23 @@ const SingleQuest = (props) => {
         }
        
     }
+    //pop-up
+    const [visible, setVisible] = useState(false);
+    const backToGame = () => {
+        setVisible(false);
+        setTableCounter(prevState => prevState+1);
+        startCounting();
+    }
 
     return (
-            <div className={`singleQuest ${(props.item === letTab) ? "" : "hidden"}`} >
-                <form onSubmit={submit} className="innerQuestion">
+            <div className={`singlequest ${(props.item === letTab) ? "" : "hidden"}`} >
+                <div className={`${visible ? "pop-up" : "hidden"}`}>
+                    <h1>ZŁA ODPOWIEDŹ </h1>
+                    <p>dobra odpowiedź to: {goodAns}</p>
+                    <p>tracisz 3 punkty</p>
+                    <button onClick={backToGame}>wróć do gry</button>
+                </div>
+                <form onSubmit={submit}>
                 <label>
                     {props.item.question}
                     <input
@@ -76,8 +98,8 @@ const AllQuests = (props) => {
     const endOfGame = props.endOfGame;
     const isFinished = props.isFinished;
 
-    //let, bo ten nieszczęsny counter się zmienia
-    
+    const setTableLength = props.setTableLength;
+    setTableLength(tableLength);
 
     //zmienne związane z Timerem:
     const timeCounter = props.timeCounter;
@@ -87,9 +109,9 @@ const AllQuests = (props) => {
     const startCounting = props.startCounting;
 
     return (
-    <div className={`${props.isQuestion ? 'component' : 'hidden'} 
+    <div className={`${props.isQuestion ? 'question-container' : 'hidden'} 
                         ${isFinished ? "hidden" : ""}`}>    
-        <div className='component questions'>
+        <div className='questions'>
             {props.items.map(item => (
                 <SingleQuest key={item.id} 
                     item={item} 
@@ -98,13 +120,13 @@ const AllQuests = (props) => {
                     setTableCounter={setTableCounter}
                     tableCounter={tableCounter}
                    
-
                     timeCounter={timeCounter}
                     setTimeCounter={setTimeCounter}
                     setTimerActive={setTimerActive}
                     startCounting={startCounting}
                     tableLength = {tableLength}
                     endOfGame={endOfGame}
+                    // setTableLength={setTableLength}
                     />
             ))}
         </div>
@@ -115,6 +137,8 @@ const AllQuests = (props) => {
             setTimeCounter={setTimeCounter}
             isTimerActive={isTimerActive}
             isFinished={isFinished}
+            setTableCounter={setTableCounter}
+            startCounting={startCounting}
             // setTimerActive={setTimerActive}
             // startCounting={startCounting}
             />
@@ -137,6 +161,9 @@ const Question = (props) => {
     const setFinished = props.setFinished;
     const isFinished = props.isFinished;
     const endOfGame = props.endOfGame;
+    const setTableLength = props.setTableLength;
+
+    // setTableLength = props.items.length);
 
     return (
         <>
@@ -153,8 +180,8 @@ const Question = (props) => {
             isFinished={isFinished}
             setFinished={setFinished}
             endOfGame={endOfGame}
+            setTableLength={setTableLength}
             />
-
         </>
     )
 }

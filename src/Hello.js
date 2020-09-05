@@ -4,8 +4,13 @@ const Hello = (props) => {
 
     const isHello = props.isHello;
     return (
-        <div className={`hello ${(isHello) ? "hidden" : ""}`}> 
-        zgadywanka
+    <div className={`hello ${(isHello) ? "hidden-hello" : ""}`}> 
+        <div className="inner-hello">
+            <h1 className="title">QUIZ WIEDZY</h1>
+            <p>gra polega na tym, aby w ciągu 20 sekund odpowiedzieć 
+            na pytania z wybranej kategorii. sprawdź, co potrafisz!</p>
+        </div>
+      
     </div>
     )
 }

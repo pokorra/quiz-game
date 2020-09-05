@@ -4,8 +4,7 @@ import ButtonsChoice from './ButtonsChoice';
 import Question from './Question';
 import Finish from './Finish';
 import data from './questionData';
-import './Game.scss';
-
+import './Main.scss';
 
 const Game = () => {
     const [category, setCategory] = useState('HisDarkMaterials');
@@ -25,11 +24,11 @@ const Game = () => {
 // tu licznik punktów, który trzeba było tu wynieść, żeby się resetował
     const [pointCounter, setPointCounter] = useState(0);
 //tu ustawiam licznik czasu
-    const [timeCounter, setTimeCounter] = useState(15);
+    const [timeCounter, setTimeCounter] = useState(20);
     const [isTimerActive, setTimerActive] = useState(false);
     const startCounting = () => {
         setTimerActive(true);
-        setTimeCounter(15);
+        setTimeCounter(20);
     }
     //setCounter ustawia counter na 15, setActive ustawia counter na 
     //aktywny lub nie, startCounting ustawia setActive na true
@@ -39,6 +38,7 @@ const Game = () => {
     const endOfGame = () => {
         setFinished(true);
     }
+    const [tableLength, setTableLength] = useState(0);
 
     const [backToGame, setBackToGame] = useState(true);
     const goBack = () => {
@@ -50,12 +50,11 @@ const Game = () => {
         setHello(false);
         setFinished(false);
         setBackToGame(true);
-        setPointCounter(0);
-        
+        setPointCounter(0);   
     }
 
     return (
-        <div className='game'>
+        <div className='game-container'>
             <ButtonsChoice 
                 isHello={isHello} 
                 setHello={setHello}
@@ -64,6 +63,7 @@ const Game = () => {
                 toggleButton={toggleButton}
                 setTimerActive={setTimerActive}
                 startCounting={startCounting}
+                setPointCounter={setPointCounter}
                 isFinished={isFinished}
                 backToGame={backToGame}
                 />
@@ -74,6 +74,7 @@ const Game = () => {
                 pointCounter={pointCounter} 
                 setPointCounter={setPointCounter}
 
+                setTableLength={setTableLength}
                 timeCounter={timeCounter}
                 setTimeCounter={setTimeCounter}
                 isTimerActive={isTimerActive}
@@ -86,12 +87,10 @@ const Game = () => {
 
                 />
             <Finish
-                setFinished={setFinished}
+                pointCounter={pointCounter} 
                 isFinished={isFinished}
-                endOfGame={endOfGame}
-                backToGame={backToGame}
-                goBack={goBack}
                 newStart={newStart}
+                tableLength={tableLength}
             />
             
         </div>
