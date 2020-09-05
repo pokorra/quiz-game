@@ -1,3 +1,5 @@
+You can take the quiz here: https://pokorra.github.io/quiz-game/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
