@@ -14,8 +14,9 @@ const Finish = (props) => {
         <div className={`${isFinished ? "finished" : "hidden"} `}>
             <h2>koniec gry!</h2>
             <h1>{`udało ci się zdobyć ${pointCounter} punktów na ${tableLength} możliwych! gratulacje!`}</h1>
-            <p>niech każdy w skrytości serca oceni, czy to dobry wynik, 
-                i czy można coś jeszcze poprawić. ja ze swojej strony mogę podziękować za wyśmienitą zabawę xd</p>
+            <p>gratuluję wyniku i zachęcam do pogłębiania wiedzy na najróżniejsze tematy.
+                pamiętajcie, wiedza bezużyteczna nie istnieje!
+            </p>
             <button onClick={onceMoreToggle}>zagraj jeszcze raz</button>
         </div>
     )

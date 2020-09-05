@@ -18,7 +18,7 @@ const SingleQuest = (props) => {
 
     const submit = (e) => {
         e.preventDefault();
-        if (goodAns === odp) {
+        if (goodAns.toLowerCase() === odp.toLowerCase()) {
             props.updateCounter(10);
             setOdp('');
             setTableCounter(prevState=>prevState+1);

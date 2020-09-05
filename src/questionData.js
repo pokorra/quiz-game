@@ -1,59 +1,44 @@
-const Wybory = [
+const Kosmos = [
   {
     id: 1,
-    question: "Który kandydat należy do Kongresu Nowej Prawicy?",
-    answer: "Żółtek" 
+    question: "pierścienie tego ciała niebieskiego wystąpiły w tytule książki W. G. Sebalda",
+    answer: "Saturn" 
   },
   {
     id: 2,
-    question: "Który kandydat jest z zawodu lekarzem?",
-    answer: "Kosiniak-Kamysz" 
+    question: "nazwa tego batonika inspirowana jest galaktyką, w której się znajdujemy",
+    answer: "Milky Way" 
   },
   {
     id: 3,
-    question: "Który kandydat jest najmłodszy?",
-    answer: "Bosak" 
+    question: "żółty karzeł Układu Słonecznego to...",
+    answer: "Słońce" 
   },
   {
     id: 4,
-    question: "Który kandydat wygląda jak gruby Ryszard Petru?",
-    answer: "Piotrowski" 
+    question: "zapoczątkowany w XVI wieku trolling głosił, że księżyc zrobiony jest z...",
+    answer: "sera" 
   },
   {
     id: 5,
-    question: "Który kandydat jest synem słynnego muzyka jazzowego?",
-    answer: "Trzaskowski" 
+    question: "największa planeta w Układzie Słonecznym to...",
+    answer: "Jowisz" 
   },
   {
     id: 6,
-    question: "Który kandydat ma na drugie Sebastian?",
-    answer: "Duda" 
+    question: "pierwsze pieski, które wróciły żywe z wyprawy w kosmos, to Biełka i...",
+    answer: "Striełka" 
   },
   {
     id: 7,
-    question: "Który kandydat miał własne wydawnictwo książkowe?",
-    answer: "Biedroń" 
+    question: "pierwszy człowiek na Księżycu miał ma imię Lance, Neil czy Louis?",
+    answer: "Neil" 
   },
   {
     id: 8,
-    question: "Który kandydat nie powie o sobie 'mucha nie siada'? xd",
-    answer: "Witkowski" 
-  },
-  {
-    id: 9,
-    question: "Który kandydat świadczy usługi z zakresu m.in. IT?",
-    answer: "Tanajno" 
-  },
-  {
-    id: 10,
-    question: "Który kandydat jest właścicielem browaru Lwówek?",
-    answer: "Jakubiak" 
-  },
-  {
-    id: 11,
-    question: "Który kandydat płakał jak czytał konstytucję? xd",
-    answer: "Hołownia" 
-  },
+    question: "ciało niebieskie nazywane gwiezdnym psem to...",
+    answer: "Syriusz" 
+  }
 ];
 
 const JS =[
@@ -175,4 +160,4 @@ const Animals = [
   },
 ]
 
-export default {Wybory, JS, HisDarkMaterials, Animals};
+export default {Kosmos, JS, HisDarkMaterials, Animals};

@@ -11,7 +11,7 @@ const ButtonsChoice = (props) => {
     const setPointCounter = props.setPointCounter;
 
     const values = {
-        Wybory: 'Wybory',
+        Kosmos: 'Kosmos',
         JS: 'JS',
         HDM: 'HisDarkMaterials',
         Animals: 'Animals'
@@ -29,9 +29,9 @@ const ButtonsChoice = (props) => {
             <Hello isHello={isHello} setHello={setHello}/>
             <div className="choice">
                 <p>Wybierz kategorię: </p>
-                <button onClick={choice} name={values.Wybory}>Wybory 2020</button>
+                <button onClick={choice} name={values.Kosmos}>Kosmos</button>
                 <button onClick={choice} name={values.JS}>Front-end</button>
-                <button onClick={choice} name={values.HDM}>Mroczne materie</button>
+                {/* <button onClick={choice} name={values.HDM}>Mroczne materie</button> */}
                 <button onClick={choice} name={values.Animals}>Zwierzęta</button>
             </div>
         </div>
