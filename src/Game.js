@@ -16,9 +16,11 @@ const Game = () => {
 //komponent z właściwą grą - Question
     const [isQuestion, setQuestion] = useState(false);
     const [isHello, setHello] = useState(false);
+    const [btnChoiceField, setBtnChoiceField] = useState(false);
     const toggleButton = () => {
         setHello(true);
         setQuestion(true);
+        setBtnChoiceField(true);
     } 
 
 // tu licznik punktów, który trzeba było tu wynieść, żeby się resetował
@@ -50,7 +52,8 @@ const Game = () => {
         setHello(false);
         setFinished(false);
         setBackToGame(true);
-        setPointCounter(0);   
+        setPointCounter(0);
+        setBtnChoiceField(false); 
     }
 
     return (
@@ -66,6 +69,8 @@ const Game = () => {
                 setPointCounter={setPointCounter}
                 isFinished={isFinished}
                 backToGame={backToGame}
+                setTimeCounter={setTimeCounter}
+                btnChoiceField={btnChoiceField}
                 />
             <Question 
                 quest={data[category]}

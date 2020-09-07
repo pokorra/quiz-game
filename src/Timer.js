@@ -9,16 +9,23 @@ const Timer = (props) => {
     const [visible, setVisible] = useState(false);
     const setTableCounter = props.setTableCounter;
     const startCounting = props.startCounting;
+//ostatnie pytanie:
+    const tableCounter = props.tableCounter;
+    const tableLength = props.tableLength;
+    const endOfGame = props.endOfGame;
     
     const backToGame = () => {
         setVisible(false);
         setTableCounter(prevState => prevState+1);
         startCounting();
+        if (tableCounter +1 === tableLength) {
+            endOfGame();
+            setTableCounter(0);
+        }
     }
     useEffect(() => {
         let interval = null;
-       
-        if (isTimerActive && timeCounter > 0) {
+         if (isTimerActive && timeCounter > 0) {
             interval = setInterval(() => {
                 setTimeCounter(prevState => prevState -1);
             }, 1000);
@@ -26,7 +33,6 @@ const Timer = (props) => {
             clearInterval(interval);
             //zmiana stanu w pop-upie
             !isFinished && setVisible(true);
-            console.log(timeCounter);
         // } else if (!isTimerActive) {
         //     clearInterval(interval);
         //     console.log(timeCounter);

@@ -23,8 +23,6 @@ const SingleQuest = (props) => {
             setOdp('');
             setTableCounter(prevState=>prevState+1);
         } else {
-            // setTimeCounter(0);
-            console.log(tableCounter);
             setTimerActive(false);
             setVisible(true);
             props.updateCounter(-3);
@@ -94,7 +92,6 @@ const AllQuests = (props) => {
     const [tableCounter, setTableCounter] = useState(0);
     let firstTableEl = props.items[tableCounter];
     const tableLength = props.items.length;
-
     const endOfGame = props.endOfGame;
     const isFinished = props.isFinished;
 
@@ -126,7 +123,6 @@ const AllQuests = (props) => {
                     startCounting={startCounting}
                     tableLength = {tableLength}
                     endOfGame={endOfGame}
-                    // setTableLength={setTableLength}
                     />
             ))}
         </div>
@@ -139,6 +135,9 @@ const AllQuests = (props) => {
             isFinished={isFinished}
             setTableCounter={setTableCounter}
             startCounting={startCounting}
+            tableCounter={tableCounter}
+            tableLength={tableLength}
+            endOfGame={endOfGame}
             // setTimerActive={setTimerActive}
             // startCounting={startCounting}
             />

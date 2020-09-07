@@ -8,8 +8,23 @@
     border-radius: $standard;
     color: $purple;
     padding: $standard;
-    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     // border: 1px solid blue;
+}
+
+.cat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.short-field {
+    height: 15vh;
+}
+
+.long-field {
+    height: 40vh;
 }
 
 .hidden-button {
