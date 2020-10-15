@@ -25,6 +25,7 @@ const Game = () => {
 
 // tu licznik punktów, który trzeba było tu wynieść, żeby się resetował
     const [pointCounter, setPointCounter] = useState(0);
+
 //tu ustawiam licznik czasu
     const [timeCounter, setTimeCounter] = useState(20);
     const [isTimerActive, setTimerActive] = useState(false);
@@ -43,9 +44,6 @@ const Game = () => {
     const [tableLength, setTableLength] = useState(0);
 
     const [backToGame, setBackToGame] = useState(true);
-    const goBack = () => {
-        setBackToGame(false);
-    }
     
     const newStart = () => {
         setQuestion(false);
@@ -73,12 +71,10 @@ const Game = () => {
                 btnChoiceField={btnChoiceField}
                 />
             <Question 
-                quest={data[category]}
+                items={data[category]}
                 isQuestion={isQuestion}
-
                 pointCounter={pointCounter} 
                 setPointCounter={setPointCounter}
-
                 setTableLength={setTableLength}
                 timeCounter={timeCounter}
                 setTimeCounter={setTimeCounter}
@@ -97,7 +93,7 @@ const Game = () => {
                 newStart={newStart}
                 tableLength={tableLength}
             />
-            
+            {/* <button className="btn-reset" onClick={newStart}>RESET</button> */}
         </div>
     )
 }

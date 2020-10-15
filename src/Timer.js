@@ -1,18 +1,13 @@
 import React, {useState, useEffect} from 'react';
 
-const Timer = (props) => {
-    const timeCounter = props.timeCounter;
-    const setTimeCounter = props.setTimeCounter;
-    const isTimerActive = props.isTimerActive;
-    const isFinished = props.isFinished;
+const Timer = ({timeCounter, setTimeCounter, isTimerActive, isFinished,
+                setTableCounter, startCounting, tableCounter, tableLength, endOfGame}) => {
+
 //początek pop-up:
     const [visible, setVisible] = useState(false);
-    const setTableCounter = props.setTableCounter;
-    const startCounting = props.startCounting;
+
 //ostatnie pytanie:
-    const tableCounter = props.tableCounter;
-    const tableLength = props.tableLength;
-    const endOfGame = props.endOfGame;
+    //  tableCounter, tableLength, endOfGame 
     
     const backToGame = () => {
         setVisible(false);
@@ -39,7 +34,7 @@ const Timer = (props) => {
         }
         return () => clearInterval(interval);
        
-    }, [isTimerActive, timeCounter]);
+    }, [isTimerActive, timeCounter, isFinished, setTimeCounter]);
 
     
     return (

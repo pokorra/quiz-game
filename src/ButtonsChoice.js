@@ -1,16 +1,7 @@
 import React from 'react';
 import Hello from './Hello';
 
-const ButtonsChoice = (props) => {
-    const toggle = props.toggleButton;
-    const startCounting = props.startCounting;
-    const setCategory = props.setCategory;
-    const isFinished = props.isFinished;
-    const isHello = props.isHello;
-    const setHello=props.setHello;
-    const setPointCounter = props.setPointCounter;
-    const setTimeCounter = props.setTimeCounter;
-    const btnChoiceField = props.btnChoiceField;
+const ButtonsChoice = ({toggleButton, startCounting, setCategory, isFinished, isHello, setHello, setPointCounter, setTimeCounter, btnChoiceField}) => {
 
     const values = {
         Kosmos: 'Kosmos',
@@ -21,7 +12,7 @@ const ButtonsChoice = (props) => {
    
     const choice = (e) => {
         setCategory(e.target.name);
-        toggle();
+        toggleButton();
         startCounting();
         setPointCounter(0);
         setTimeCounter(20);

@@ -1,11 +1,8 @@
 import React from 'react';
 
-const Finish = (props) => {
-    const isFinished = props.isFinished;
+const Finish = ({isFinished, newStart, pointCounter, tableLength}) => {
 
-    const newStart = props.newStart;
-    const pointCounter = props.pointCounter;
-    const tableLength = props.tableLength*10;
+    const maxPoints = tableLength*10;
 
     const onceMoreToggle = () => {
         newStart();
@@ -13,7 +10,7 @@ const Finish = (props) => {
     return (
         <div className={`${isFinished ? "finished" : "hidden"} `}>
             <h2>koniec gry!</h2>
-            <h1>{`udało ci się zdobyć ${pointCounter} punktów na ${tableLength} możliwych! gratulacje!`}</h1>
+            <h1>{`udało ci się zdobyć ${pointCounter} punktów na ${maxPoints} możliwych! gratulacje!`}</h1>
             <p>gratuluję wyniku i zachęcam do pogłębiania wiedzy na najróżniejsze tematy.
                 pamiętajcie, wiedza bezużyteczna nie istnieje!
             </p>

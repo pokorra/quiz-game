@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Counter = (props) => {
+const Counter = ({counter}) => {
 
     return (
         <div className='res-counter'>
-            <h2 >wynik: {props.counter} </h2>
+            <h2 >wynik: {counter} </h2>
         </div>
     
     )
