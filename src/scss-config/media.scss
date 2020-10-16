@@ -1,36 +1,37 @@
 
-@media (max-width: 700px) {
-        $standard: 1rem;
 
-        h1 {
-            font-size: 3rem;
-        }
-        h2 {
-            font-size: 2.5rem;
+
+
+//bigger devices:
+@media (min-width: 600px) {
+    .App {
+        width: 80vw;
+    .hello {
+        .title {
+            font-size: 45px;
         }
         p {
-            font-size: .2rem;
-        } 
-        .questions {
-            height: 25vh;
-        }
-        .singlequest {
-            height: 100%;
-        }
-        .buttons-choice {
-            // height: 70%;
-            border: 1px solid black;
-            display: flex;
-            flex-direction: column;
-        }
-        .hello {
-            // height: 40%;
-            border: 1px dotted green;
-        }
-        .choice {
-            margin-top: $standard;
-            margin-bottom: $standard;
-            // height: 50%;
-            border: 1px dotted maroon;
+            font-size: 18px;
+            max-width: 450px;
         }
     }
+}
+}
+
+//desktops:
+@media (min-width: 900px) {
+    .App {
+        width: 60vw;
+        margin: 20px auto;
+    .hello {
+        .title {
+            font-size: 50px;
+        }
+        p {
+            font-size: 20px;
+            max-width: 500px;
+        }
+    }
+}
+}
+

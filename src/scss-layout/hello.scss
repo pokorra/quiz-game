@@ -1,71 +1,38 @@
 .hello {
     position: relative;
-    padding: $standard;
-    height: 140px;
-    // border: 1px solid white;
-    color: $green;
+    height: 160px;
+    background-color: rgb(20, 20, 20) ;
+
 
     .inner-hello {
         position: relative;
-        padding: $standard;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        h1, p {
-            padding: $standard;
+        justify-content: space-evenly;
+        height: 100%;
+        color: whitesmoke;
+        .title {
+            font-family: $title-font;
+            font-size: 40px;
+            text-align: center;
+            text-shadow: $softglow;
         }
         p {
-            font-style: italic;
+            font-size: 16px;
             font-weight: normal;
+            font-family: $question-font;
+            text-align: justify;
+            max-width: 380px;
         }
     }
 }
 
 .hidden-hello {
     animation: helloout 1s ease-in forwards;
-    // display: none;
 }
+
 @keyframes helloout {
   0% {top: 0; height: 140px; }
-  100% {top: -160px; height: 0; }
-
-  
-}
-
-.title {
-    color: $purple;
-    font-size: 50px;
-    font-weight: 800;
-    animation: title 5s linear infinite;
-}
-@keyframes title {
-    0% {color: $purple;}
-    15% {color: $pink;}
-    40% { color: $green;}
-    65% {color: $pinkier;}
-    90% {color: $purple;}
-}
-
-.title::before,
-.title::after {
-    content: '';
-    display: inline-block;
-    height: $standard*3;
-    width: $standard*3;
-    border: 5px solid $purple;
-    border-radius: 50%;
-    margin: 0 $standard*2;
-    animation: pseudos 5s linear infinite;
-}
-
-@keyframes pseudos {
-    0% {border-top-color: $purple;}
-    15% {border-top-color: $pink;}
-    40% { border-top-color: $green;}
-    // 50% {transform: rotate(1turn); }
-    65% {border-top-color: $pinkier;}
-    90% {border-top-color: $purple;}
-    // 99% {transform: rotate(1turn);}
-
+  100% {top: -170px; height: 0; }
 }

@@ -7,11 +7,6 @@ body {
     color: $purple;
 }
 
-h1 {
-    font-size: 40px;
-    font-weight: bolder;
-}
-
 h2 {
     font-size: 28px;
     font-weight: bold;
@@ -34,8 +29,6 @@ input {
 	background: $background;
 	line-height: $standard*2;
 }
-
-
 
 .hidden {
     display: none;

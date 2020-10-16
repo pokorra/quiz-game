@@ -1,10 +1,35 @@
 // colors:
-$purple: #302161;
-$green: #147570;
-$pink: #d69393;
-$pinkier: #ac415a;
-$background: #eee4e4;
+$purple: rgb(85, 22, 22);
+$green: rgb(214, 82, 214);
+$pink: rgb(121, 133, 212);
+$pinkier: rgb(104, 135, 136);
+$background: rgb(206, 206, 206);
 
 //margins and paddings:
 $standard: 10px;
-$primaryfont: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$primaryfont: 'Nova Square', cursive;
+
+//fonts:
+@import url('https://fonts.googleapis.com/css2?family=Skranji&family=Nova+Square&family=VT323&display=swap');
+
+$title-font: 'Skranji', cursive;
+
+$question-font: 'VT323', monospace;
+
+$descript-font: 'Nova Square', cursive;
+
+// softglow:
+$softglow:  0 0 10px lightgray, 
+            0 0 20px lightgray, 
+            0 0 30px lightpink, 
+            0 0 40px #e60073, 
+            0 0 50px #e60073, 
+            0 0 60px #e60073, 
+            0 0 70px lightpink;
+
+//oldies:
+// $purple: #302161;
+// $green: #147570;
+// $pink: #d69393;
+// $pinkier: #ac415a;
+// $background: #eee4e4;

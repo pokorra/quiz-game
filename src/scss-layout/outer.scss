@@ -1,20 +1,12 @@
 .App {
-    border: 8px double $green;
     width: 90vw;
     height: 90vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    margin: 30px auto;
+    margin: 15px auto;
+    //czy background jest konieczny?
+    //do zmiany na whitesmoke pod koniec
     background-color: $background;
-    border-radius: $standard;
-    animation: border 5s linear infinite;
 }
 
-@keyframes border {
-    0% {border-color: $green;}
-    15% {border-color: $pink;}
-    40% { border-color: $purple;}
-    65% {border-color: $pinkier;}
-    90% {border-color: $green;}
-}
+
