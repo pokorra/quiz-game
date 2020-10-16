@@ -3,3 +3,10 @@
     border-radius: $standard;
     background-color: $green;
 }
+
+@mixin column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

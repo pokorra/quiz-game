@@ -1,10 +1,11 @@
-html {
-    font-size: 3vw;
+* {
+    transition: .5s;
 }
 
 body {
     font-family: $primaryfont;
-    color: $purple;
+    background-color: $black;
+    color: whitesmoke;
 }
 
 h2 {
@@ -12,7 +13,7 @@ h2 {
     font-weight: bold;
 }
 
-p, label {
+label {
     font-size: 20px;
     font-weight: bold;
 }
@@ -23,8 +24,8 @@ input {
     margin-left: $standard;
 	border:0;
 	padding:0;
-	display:inline-block;
-	vertical-align:middle;
+	display: inline-block;
+	vertical-align: middle;
 	white-space:normal;
 	background: $background;
 	line-height: $standard*2;

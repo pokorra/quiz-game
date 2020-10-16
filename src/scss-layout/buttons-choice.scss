@@ -1,33 +1,33 @@
-.buttons-choice {
-    border: 1px solid green;
-    height: 50%;
-    // z-index: 10;
-}
+// .buttons-choice {
+    //at this point not sure if that class is worth keeping
+// }
 
 .choice {
-    background-color: $pink;
-    border-radius: $standard;
-    color: $purple;
-    padding: $standard;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    // border: 1px solid blue;
+    @include column;
+    height: 20vh;
+   
+    p {
+        font-size: 18px;
+    }
+    button {
+        font-size: 14px;
+    }
+    button:hover {
+        box-shadow: $smolglow;
+    }
 }
 
 .cat-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
 }
-.short-field {
-    height: 15vh;
-}
+// .short-field {
+    
+// }
 
-.long-field {
-    height: 40vh;
-}
-
-.hidden-button {
-    display: none;
-}
+// .long-field {
+//     height: 40vh;
+// }

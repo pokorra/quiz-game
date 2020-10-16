@@ -19,19 +19,22 @@ const ButtonsChoice = ({toggleButton, startCounting, setCategory, isFinished, is
     }
 
     return (
-        <div className={`buttons-choice ${isFinished ? "hidden-button" : ""} `}>
+        <div className={`buttons-choice ${isFinished ? "hidden" : ""} `}>
             <Hello isHello={isHello} setHello={setHello}/>
-            <div className ={`choice ${btnChoiceField ? "short-field" : "long-field"}`}>
-                <p>Wybierz kategorię: </p>
-                <div className={`${btnChoiceField ? "" : "cat-container"}`}> 
-                <button onClick={choice} name={values.Kosmos}>Kosmos</button>
-                <button onClick={choice} name={values.JS}>Front-end</button>
-                {/* <button onClick={choice} name={values.HDM}>Mroczne materie</button> */}
-                <button onClick={choice} name={values.Animals}>Zwierzęta</button>
+            {/* <div className ={`choice ${btnChoiceField ? "short-field" : "long-field"}`}> */}
+            <div className ={`choice`}>
+                <p>wybierz kategorię: </p>
+                {/* <div className={`${btnChoiceField ? "" : "cat-container"}`}>  */}
+                <div className="cat-container">
+                    <button onClick={choice} name={values.Kosmos}>KOSMOS</button>
+                    <button onClick={choice} name={values.JS}>FRONT-END</button>
+                    {/* <button onClick={choice} name={values.HDM}>Mroczne materie</button> */}
+                    <button onClick={choice} name={values.Animals}>ZWIERZĘTA</button>
                 </div>
             </div>
         </div>
     )
 }
+//czemu służy btnChoiceField?
 
 export default ButtonsChoice;

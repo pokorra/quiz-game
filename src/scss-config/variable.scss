@@ -5,18 +5,19 @@ $pink: rgb(121, 133, 212);
 $pinkier: rgb(104, 135, 136);
 $background: rgb(206, 206, 206);
 
+$black: rgb(20, 20, 20);
+
 //margins and paddings:
 $standard: 10px;
-$primaryfont: 'Nova Square', cursive;
+
 
 //fonts:
 @import url('https://fonts.googleapis.com/css2?family=Skranji&family=Nova+Square&family=VT323&display=swap');
 
 $title-font: 'Skranji', cursive;
-
 $question-font: 'VT323', monospace;
+$primaryfont: 'Nova Square', cursive;
 
-$descript-font: 'Nova Square', cursive;
 
 // softglow:
 $softglow:  0 0 10px lightgray, 
@@ -26,7 +27,16 @@ $softglow:  0 0 10px lightgray,
             0 0 50px #e60073, 
             0 0 60px #e60073, 
             0 0 70px lightpink;
-
+$glow: 0 0 20px #fff, 
+        0 0 30px #ff4da6, 
+        0 0 40px #ff4da6, 
+        0 0 50px #ff4da6, 
+        0 0 60px #ff4da6, 
+        0 0 70px #ff4da6,
+        0 0 80px #ff4da6;
+$smolglow: 0 0 10px lightgray, 
+            0 0 20px lightpink, 
+            0 0 30px #ff4da6;
 //oldies:
 // $purple: #302161;
 // $green: #147570;

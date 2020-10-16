@@ -1,6 +1,6 @@
 .question-container {
   margin: $standard 0;
-  // border: 1px solid black;
+  border: 1px solid blue;
   height: 70%;
     
 }
@@ -12,7 +12,7 @@
 
 .singlequest {
     @include questionStyle;
-    height: 80px;
+    height: 140px;
     width: 100%;
     animation: anime .5s ease-in forwards;
   }
