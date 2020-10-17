@@ -34,9 +34,6 @@ const Question = ({items, pointCounter, setPointCounter, isQuestion, setTimeCoun
                     letTab={firstTableEl}
                     setTableCounter={setTableCounter}
                     tableCounter={tableCounter}
-                   
-                    // timeCounter={timeCounter}
-                    // setTimeCounter={setTimeCounter}
                     setTimerActive={setTimerActive}
                     startCounting={startCounting}
                     tableLength = {tableLength}

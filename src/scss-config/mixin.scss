@@ -1,7 +1,7 @@
 @mixin questionStyle {
     padding: $standard*2;
     border-radius: $standard;
-    background-color: $green;
+    background-color:rgb(204, 102, 161);
 }
 
 @mixin column {
@@ -9,4 +9,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@mixin btn-standard {
+        background-color: $black;
+        border: 2px solid whitesmoke;
+        color: whitesmoke;
+}
+@mixin btn-hover {
+    box-shadow: $smolglow;
+    background-color: whitesmoke;
+    color: $black;
 }

@@ -4,31 +4,4 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-
-    .time-flowing {
-        margin-left: $standard*2;
-        border: 3px solid $green;
-        border-radius: 50%;
-        width: $standard*3;
-        height: $standard*3;   
-    }
-    .time-one {
-        border-left-color: $pinkier;
-        animation: loading 1s infinite linear;
-    }
-    .time-two {
-        border-right-color: $pink;
-        border-top-color: $pink;
-        animation: loading 1s infinite ease-in;
-    }
-    .time-three {
-        border-bottom-color: $purple;
-        animation: loading .9s infinite linear;
-    }
-}
-
-@keyframes loading {
-    100%{
-        transform: rotate(1turn);
-    }
 }

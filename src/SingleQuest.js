@@ -56,15 +56,18 @@ const SingleQuest = ({key, item, updateCounter, letTab, setTableCounter,
                 </div>
                 <form onSubmit={submit}>
                 <label>
-                    {item.question}
+                   {item.question} 
+                   <div>
                     <input
-                    type='text'
-                    key={key}
-                    name = {goodAns}
-                    value={odp}
-                    onChange = {e => setOdp(e.target.value)}
-                    />
-                    <button type='submit'> ok</button>
+                        type='text'
+                        key={key}
+                        name = {goodAns}
+                        value={odp}
+                        onChange = {e => setOdp(e.target.value)}
+                        />
+                        <button type='submit'> ok</button>
+                   </div>
+                   
                 </label>
                 </form> 
             </div>         

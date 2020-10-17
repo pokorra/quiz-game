@@ -1,23 +1,25 @@
 .pop-up {
     position: absolute;
-    width: 70vw;
+    width: 100%;
     height: 80vh;
-    background-color: black;
+    background-color: $black;
     opacity: .9;
     top: $standard*3;
-    border-radius: $standard*2;
-
+    right: 0px;
+    border-radius: $standard;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    h1, p {
-        color: white;
+    h1 {
+       font-size: 30px;
+       margin-bottom: 20px;
     }
     button {
-        margin: $standard;
-        background-color: black;
-        border: 2px solid white;
-        color: white;
+        @include btn-standard;
+        font-size: 16px;
+        &:hover {
+           @include btn-hover;
+        }
     }
 }

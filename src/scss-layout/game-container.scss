@@ -1,16 +1,9 @@
 .game-container {
-    border: 2px solid pink;
-    // border-radius: $standard;
     height: 100%;
     width: 90%;
     overflow: hidden;
-    // animation: start 1s ease-in forwards;
 }
 
-@keyframes start {
-    0% {width: 0; margin: auto;}
-    100% {width: 90%;}
-  }
 
 //btn musi zostać przylutowany na stałe do ramki, pewnie
 //jako after? to jeszcze przede mną

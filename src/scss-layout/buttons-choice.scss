@@ -11,9 +11,10 @@
     }
     button {
         font-size: 14px;
+        @include btn-standard;
     }
     button:hover {
-        box-shadow: $smolglow;
+        @include btn-hover;
     }
 }
 

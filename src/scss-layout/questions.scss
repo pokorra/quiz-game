@@ -1,20 +1,42 @@
 .question-container {
   margin: $standard 0;
-  border: 1px solid blue;
   height: 70%;
-    
-}
-
-.questions {
-    // background-color: $pinkier;
-    border-radius: $standard;
 }
 
 .singlequest {
     @include questionStyle;
-    height: 140px;
+    height: 200px;
     width: 100%;
     animation: anime .5s ease-in forwards;
+    form {
+      // border: 1px solid green;
+      height: 100%;
+      @include column;
+      label {
+        font-size: 18px;
+        line-height: 23px;
+        input {
+          width: 60%;
+          max-width: 300px;
+          border: none;
+          display: inline-block;
+          vertical-align: middle;
+          white-space:normal;
+          background: $background;
+          font-size: 18px;
+          line-height: 30px;
+          font-family: $primaryfont;
+        }
+        button {
+          font-size: 18px;
+          width: 20%;
+          &:hover {
+            background-color: rgb(48, 48, 48);
+            color: whitesmoke; 
+          }
+        }
+      }
+    }
   }
   @keyframes anime {
     0% {margin-left: 100%; }

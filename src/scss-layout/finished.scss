@@ -1,17 +1,32 @@
 .finished {
     height: 100%;
     width: 100%;
-    background-color: $pink;
-    animation: finish 2s ease-in forwards;
+    animation: finish 1.5s ease-in forwards;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: $standard;
-    h2, h1 {
-        margin: $standard;
+    justify-content: center;
+    h2, h3, p, button {
+        margin: $standard $standard $standard*4;
     }
-    p{
-        margin: $standard*3;
+    h2 {
+        font-family: $title-font;
+        letter-spacing: 2px;
+    }
+    h3, p {
+        text-align: center;
+    }
+    h3 {
+        font-size: 20px;
+    }
+
+    
+    button {
+        @include btn-standard;
+        font-size: 18px;
+        &:hover {
+            @include btn-hover
+        }
     }
 
 }

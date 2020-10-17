@@ -43,13 +43,8 @@ const Timer = ({timeCounter, setTimeCounter, isTimerActive, isFinished,
                 <h1>KONIEC CZASU </h1>
                 <button onClick={backToGame}>wróć do gry</button>
                 </div>
-            <h2 className=''> czas: {timeCounter} </h2> 
-            <div className='time-flowing time-one'> </div>
-            <div className='time-flowing time-two'> </div>
-            <div className='time-flowing time-three'> </div>
-            
+            <h2> czas: {timeCounter} </h2> 
         </div>
-        
     )
 }
 
