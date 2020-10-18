@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d96c2945fb9f5a758d4d5b55242df125",
+    "revision": "2e95c8a7cb46f5b107b625bec95f8e45",
     "url": "/quiz-game/index.html"
   },
   {
-    "revision": "79330972d6871a4498b4",
-    "url": "/quiz-game/static/css/main.fcbfb488.chunk.css"
+    "revision": "a40d2a00b44ebc6857bb",
+    "url": "/quiz-game/static/css/main.c6d9f152.chunk.css"
   },
   {
     "revision": "f07c13c7692619d0387b",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quiz-game/static/js/2.87243ecb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "79330972d6871a4498b4",
-    "url": "/quiz-game/static/js/main.b67d6980.chunk.js"
+    "revision": "a40d2a00b44ebc6857bb",
+    "url": "/quiz-game/static/js/main.a0f9bdc4.chunk.js"
   },
   {
     "revision": "27ac1ad4a29d10e36de5",
