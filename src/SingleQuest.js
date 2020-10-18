@@ -62,6 +62,7 @@ const SingleQuest = ({item, updateCounter, letTab, setTableCounter,
                         type='text'
                         // key={key}
                         name = {goodAns}
+                        autocomplete='off'
                         value={odp}
                         onChange = {e => setOdp(e.target.value)}
                         />
