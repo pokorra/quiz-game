@@ -9,6 +9,7 @@ const Question = ({items, pointCounter, setPointCounter, isQuestion, setTimeCoun
                     setTimerActive, startCounting, timeCounter, setFinished, isFinished,
                     endOfGame, setTableLength}) => {
 
+    // const items = data[category];
    //zmienne związane z komponentem Counter
     const updateCounter = (number) => {
         setPointCounter(prevState => prevState + number);

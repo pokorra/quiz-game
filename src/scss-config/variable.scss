@@ -1,8 +1,5 @@
 // colors:
-$purple: rgb(85, 22, 22);
-$green: rgb(214, 82, 214);
-$pink: rgba(98, 107, 167, .5);
-$pinkier: rgb(104, 135, 136);
+
 $background: rgb(206, 206, 206);
 
 $black: rgb(20, 20, 20);
@@ -16,8 +13,8 @@ $standard: 10px;
 
 $title-font: 'Skranji', cursive;
 $question-font: 'VT323', monospace;
-$primaryfont: 'Nova Square', cursive;
-
+$desktopfont: 'Nova Square', cursive;
+$primaryfont: 'VT323', monospace;
 
 // softglow:
 $softglow:  0 0 10px lightgray, 
@@ -37,9 +34,3 @@ $glow: 0 0 20px #fff,
 $smolglow: 0 0 10px lightgray, 
             0 0 20px lightpink, 
             0 0 30px #ff4da6;
-//oldies:
-// $purple: #302161;
-// $green: #147570;
-// $pink: #d69393;
-// $pinkier: #ac415a;
-// $background: #eee4e4;

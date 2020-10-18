@@ -11,11 +11,12 @@ const ButtonsChoice = ({toggleButton, startCounting, setCategory, isFinished, is
     };
    
     const choice = (e) => {
+        console.log('kliknięto choice');
         setCategory(e.target.name);
         toggleButton();
         startCounting();
         setPointCounter(0);
-        setTimeCounter(20);
+        // trzeba jeszcze wyzerować nr pytania!;
     }
 
     return (

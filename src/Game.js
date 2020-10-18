@@ -7,10 +7,12 @@ import data from './questionData';
 import './Main.scss';
 
 const Game = () => {
-    const [category, setCategory] = useState('HisDarkMaterials');
+    const [category, setCategory] = useState('Kosmos');
     const updateCategory = (name) => {
         setCategory(name);
     }
+
+    const items = data[category];
 
 //tutaj za pomocą klas zwijam komponent przywitalny Hello i rozwijam 
 //komponent z właściwą grą - Question
@@ -32,6 +34,7 @@ const Game = () => {
     const startCounting = () => {
         setTimerActive(true);
         setTimeCounter(20);
+        console.log(timeCounter);
     }
     //setCounter ustawia counter na 15, setActive ustawia counter na 
     //aktywny lub nie, startCounting ustawia setActive na true
@@ -40,6 +43,7 @@ const Game = () => {
     const [isFinished, setFinished] = useState(false);
     const endOfGame = () => {
         setFinished(true);
+        setTimeCounter(-3);
     }
     const [tableLength, setTableLength] = useState(0);
 
@@ -51,7 +55,8 @@ const Game = () => {
         setFinished(false);
         setBackToGame(true);
         setPointCounter(0);
-        setBtnChoiceField(false); 
+        setBtnChoiceField(false);
+        setTimeCounter(-3);
     }
 
     return (
@@ -71,7 +76,8 @@ const Game = () => {
                 btnChoiceField={btnChoiceField}
                 />
             <Question 
-                items={data[category]}
+                items={items}
+                // category={category}
                 isQuestion={isQuestion}
                 pointCounter={pointCounter} 
                 setPointCounter={setPointCounter}

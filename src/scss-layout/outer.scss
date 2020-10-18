@@ -1,10 +1,42 @@
+
 .App {
-    width: 90vw;
+    width: 100vw;
     height: 100vh;
     display: flex;
+    align-items: center;
     justify-content: center;
     margin: 0 auto;
-    // border: 2px dotted pink;
+    position: absolute;
+    overflow: hidden;
 }
 
+.twinkle {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: $softglow;
+    background: whitesmoke;
+}
 
+@for $i from 1 through 20 {
+    $x: (random(100)-50);
+    $y: (random(100)-50);
+    $tx: (random(200)-100);
+    $ty: (random(200)-100);
+    @keyframes twinkle-star-#{$i} {
+        50% {opacity: 1;}
+        100% {opacity:0;
+            transform: translate3d( ($tx * 1vw), ($ty * 1vh ), (random(30)*1px));
+            $size: random(5)+5+px; 
+            
+        }
+    }
+    .twinkle:nth-child(#{$i}){
+        opacity: 0;
+        animation: twinkle-star-#{$i} 30s linear infinite;
+        $size: random(5)+5+px;
+        height: $size;
+        width: $size;
+        animation-delay: $i * .8s;
+        transform: translate3d( ($x * 1vw), ($y * 1vh ), (random(30)*1px));
+    }
+}

@@ -4,7 +4,10 @@
 
 //bigger devices:
 @media (min-width: 600px) {
-    .App {
+    // .App {
+    //     width: 90vw;
+    // }
+    .game-container {
         width: 80vw;
     .hello {
         .title {
@@ -59,7 +62,14 @@
 
 //desktops:
 @media (min-width: 900px) {
-    .App {
+    body, button {
+        font-family: $desktopfont;
+    }
+    // .App {
+    //     width: 80vw;
+    // }
+    .game-container {
+        $primaryfont: 'Nova Square', cursive;
         width: 60vw;
         margin: 0 auto;
     .hello {
@@ -75,6 +85,9 @@
         button {
             font-size: 18px;
         }
+    }
+    .singlequest {
+        input {font-family: $desktopfont;}
     }
    
     .finished {

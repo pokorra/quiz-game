@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const SingleQuest = ({key, item, updateCounter, letTab, setTableCounter, 
+const SingleQuest = ({item, updateCounter, letTab, setTableCounter, 
     tableCounter, setTimerActive, startCounting, 
     tableLength, endOfGame}) => {
 
@@ -60,7 +60,7 @@ const SingleQuest = ({key, item, updateCounter, letTab, setTableCounter,
                    <div>
                     <input
                         type='text'
-                        key={key}
+                        // key={key}
                         name = {goodAns}
                         value={odp}
                         onChange = {e => setOdp(e.target.value)}
